@@ -6,7 +6,7 @@ export default function CloseButton() {
   const router = useRouter();
 
   return (
-    <button onClick={() => router.back()}>
+    <button onClick={() => router.back() }>
       Close
     </button>
   );
