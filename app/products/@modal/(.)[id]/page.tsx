@@ -1,7 +1,8 @@
-import Link from "next/link";
+
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { products } from "../../data";
+import CloseButton from "../../components/CloseButton";
 
 type ModalPageProps = {
   params: Promise<{
@@ -41,9 +42,7 @@ async function ProductModalContent({ params }: ModalPageProps) {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <Link href="/products" className="modal-close">
-          ✕
-        </Link>
+        <CloseButton />
 
         <h2>{product.name}</h2>
 
@@ -51,9 +50,7 @@ async function ProductModalContent({ params }: ModalPageProps) {
 
         <p>{product.description}</p>
 
-        <Link href="/products">
-          Close
-        </Link>
+        <CloseButton />
       </div>
     </div>
   );
